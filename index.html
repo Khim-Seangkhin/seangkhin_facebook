@@ -1,557 +1,682 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./css/main.css" rel="stylesheet" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
-    <link rel="stylesheet" href="style.css" />
-    <!-- Link Swiper's CSS -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-    />
-
-    <title>Facebook</title>
   </head>
-  <body>
-    <!-- Navigation Bar -->
-    <nav class="navbar">
-      <div class="navbar-left">
-        <a href="" class="navbar-brand">
-          <i class="fa-brands fa-facebook"></i>
-        </a>
-        <div class="search-container">
-          <i class="fa-solid fa-arrow-left" id="btn_close"></i>
-          <div class="search-box">
-            <i class="fa-solid fa-magnifying-glass" id="icon_search"></i>
+  <body class="bg-bgLightWhite">
+    <nav>
+      <!-- Flex Container -->
+      <div
+        class="w-full flex justify-between items-center px-4 py-2 bg-bgWhite shadow-md fixed top-0 left-0 right-0 z-10"
+      >
+        <!-- Left Items -->
+        <div class="w-3/12 flex gap-x-2 items-center">
+          <img
+            src="images/facebook.svg"
+            alt=""
+            class="w-11 h-11 object-cover"
+          />
+          <div
+            class="flex items-center gap-x-2 p-3.5 xl:py-2 xl:px-4 bg-bgLightWhite rounded-full"
+          >
+            <i
+              class="fa-solid fa-magnifying-glass text-base"
+              id="icon_search"
+            ></i>
             <input
               type="text"
+              class="hidden xxl:block focus:outline-none text-base bg-transparent text-gray-700"
               placeholder="Search Facebook"
-              id="input_search"
             />
           </div>
-          <!-- search dropdown -->
-          <div class="search-dropdown">
-            <div class="search-dropdown-title">
-              <p>Recent</p>
-              <p>Edit</p>
-            </div>
-            <div class="search-dropdown-user">
-              <div class="box">
-                <div class="user">
-                  <img src="images/account.png" alt="" />
-                  <p>Lorem ipsum dolor sit amet.</p>
-                </div>
-                <i class="fa-solid fa-xmark"></i>
-              </div>
-              <div class="box">
-                <div class="user">
-                  <img src="images/account.png" alt="" />
-                  <p>Lorem ipsum dolor sit amet.</p>
-                </div>
-                <i class="fa-solid fa-xmark"></i>
-              </div>
-              <div class="box">
-                <div class="user">
-                  <img src="images/account.png" alt="" />
-                  <p>Lorem ipsum dolor sit amet.</p>
-                </div>
-                <i class="fa-solid fa-xmark"></i>
-              </div>
-              <div class="box">
-                <div class="user">
-                  <img src="images/account.png" alt="" />
-                  <p>Lorem ipsum dolor sit amet.</p>
-                </div>
-                <i class="fa-solid fa-xmark"></i>
-              </div>
-              <div class="box">
-                <div class="user">
-                  <img src="images/account.png" alt="" />
-                  <p>Lorem ipsum dolor sit amet.</p>
-                </div>
-                <i class="fa-solid fa-xmark"></i>
-              </div>
-              <div class="box">
-                <div class="user">
-                  <img src="images/account.png" alt="" />
-                  <p>Lorem ipsum dolor sit amet.</p>
-                </div>
-                <i class="fa-solid fa-xmark"></i>
-              </div>
-              <div class="box">
-                <div class="user">
-                  <img src="images/account.png" alt="" />
-                  <p>Lorem ipsum dolor sit amet.</p>
-                </div>
-                <i class="fa-solid fa-xmark"></i>
-              </div>
-            </div>
+          <!-- Button -->
+          <div
+            id="menu-btn"
+            class="block md:hidden px-4 py-2 ml-3 text-xl text-gray-500 cursor-pointer hover:bg-bgLightWhite"
+          >
+            <i class="fa-solid fa-bars"></i>
           </div>
         </div>
-        <div class="fa-solid fa-bars" id="bar_left"></div>
-      </div>
-      <ul class="navbar-nav">
-        <li class="nav-item btn-home">
-          <a href="#" class="nav-link active">
+        <!-- Menu -->
+        <div
+          class="hidden w-6/12 md:flex justify-center items-center gap-x-3 text-xl text-bgLightBlack"
+        >
+          <a
+            href="#"
+            class="px-4 lg:px-10 py-2 hover:bg-bgLightWhite rounded-md"
+          >
             <i class="fa-solid fa-house"></i>
           </a>
-        </li>
-        <li class="nav-item btn-video">
-          <a href="#" class="nav-link">
+          <a
+            href="#"
+            class="px-4 lg:px-10 py-2 hover:bg-bgLightWhite rounded-md"
+          >
             <i class="fa-brands fa-youtube"></i>
           </a>
-        </li>
-        <li class="nav-item btn-shop">
-          <a href="#" class="nav-link">
+          <a
+            href="#"
+            class="px-4 lg:px-10 py-2 hover:bg-bgLightWhite rounded-md"
+          >
             <i class="fa-solid fa-shop"></i>
           </a>
-        </li>
-        <li class="nav-item btn-group">
-          <a href="#" class="nav-link">
+          <a
+            href="#"
+            class="px-4 lg:px-10 py-2 hover:bg-bgLightWhite rounded-md"
+          >
             <i class="fa-solid fa-user-group"></i>
           </a>
-        </li>
-        <li class="nav-item btn-game">
-          <a href="#" class="nav-link">
+          <a
+            href="#"
+            class="hidden xxl:block px-4 lg:px-10 py-2 hover:bg-bgLightWhite rounded-md"
+          >
             <i class="fa-solid fa-gamepad"></i>
           </a>
-        </li>
-        <li class="nav-item btn-bar">
-          <a href="#" class="nav-link">
+          <a
+            href="#"
+            id="menu-btn"
+            class="hidden md:block xxl:hidden px-4 lg:px-8 py-1 hover:bg-bgLightWhite rounded-md"
+          >
             <i class="fa-solid fa-bars"></i>
           </a>
-        </li>
-      </ul>
-      <div class="navbar-right">
-        <div class="btn btn-plus">
-          <i class="fa-solid fa-plus"></i>
         </div>
-        <div class="btn btn-list">
-          <i class="fa-solid fa-list"></i>
-        </div>
-        <div class="btn" id="messenger">
-          <i class="fa-brands fa-facebook-messenger"></i>
-          <div class="messenger">
-            <h2>Chats</h2>
-            <div class="search-messenger">
-              <i class="fa-solid fa-magnifying-glass"></i>
-              <input type="text" placeholder="Search Messenger" />
-            </div>
-            <div class="messenger-title">
-              <p>Inbox</p>
-              <p>Communities</p>
-            </div>
-            <div class="messenger-text">
-              <p>Missing chat history.</p>
-              <a href="#">Sync now</a>
-            </div>
-            <div class="messenger-box">
-              <div class="box">
-                <img src="images/account.png" alt="" />
-                <div class="text">
-                  <h4>Lorem ipsum dolor sit amet.</h4>
-                  <p>send a vice message .1d</p>
-                </div>
-              </div>
-              <div class="box">
-                <img src="images/account.png" alt="" />
-                <div class="text">
-                  <h4>Lorem ipsum dolor sit amet.</h4>
-                  <p>send a vice message .1d</p>
-                </div>
-              </div>
-              <div class="box">
-                <img src="images/account.png" alt="" />
-                <div class="text">
-                  <h4>Lorem ipsum dolor sit amet.</h4>
-                  <p>send a vice message .1d</p>
-                </div>
-              </div>
-              <div class="box">
-                <img src="images/account.png" alt="" />
-                <div class="text">
-                  <h4>Lorem ipsum dolor sit amet.</h4>
-                  <p>send a vice message .1d</p>
-                </div>
-              </div>
-              <div class="box">
-                <img src="images/account.png" alt="" />
-                <div class="text">
-                  <h4>Lorem ipsum dolor sit amet.</h4>
-                  <p>send a vice message .1d</p>
-                </div>
-              </div>
-              <div class="box">
-                <img src="images/account.png" alt="" />
-                <div class="text">
-                  <h4>Lorem ipsum dolor sit amet.</h4>
-                  <p>send a vice message .1d</p>
-                </div>
-              </div>
-              <div class="box">
-                <img src="images/account.png" alt="" />
-                <div class="text">
-                  <h4>Lorem ipsum dolor sit amet.</h4>
-                  <p>send a vice message .1d</p>
-                </div>
-              </div>
-              <div class="box">
-                <img src="images/account.png" alt="" />
-                <div class="text">
-                  <h4>Lorem ipsum dolor sit amet.</h4>
-                  <p>send a vice message .1d</p>
-                </div>
-              </div>
-              <div class="box">
-                <img src="images/account.png" alt="" />
-                <div class="text">
-                  <h4>Lorem ipsum dolor sit amet.</h4>
-                  <p>send a vice message .1d</p>
-                </div>
-              </div>
-              <div class="box">
-                <img src="images/account.png" alt="" />
-                <div class="text">
-                  <h4>Lorem ipsum dolor sit amet.</h4>
-                  <p>send a vice message .1d</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="btn" id="notification">
-          <i class="fa-solid fa-bell"></i>
-          <!-- Notifications -->
-          <div class="notification">
-            <h2>Notifications</h2>
-            <div class="titlt-one">
-              <p>All</p>
-              <p>Unread</p>
-            </div>
-            <div class="titlt-two">
-              <p>Earlier</p>
-              <p>See all</p>
-            </div>
-            <div class="notification-box">
-              <div class="box">
-                <div class="user">
-                  <img src="images/account.png" alt="" />
-                  <p>Lorem ipsum dolor sit amet.</p>
-                </div>
-                <div class="dot"></div>
-              </div>
-              <div class="box">
-                <div class="user">
-                  <img src="images/account.png" alt="" />
-                  <p>Lorem ipsum dolor sit amet.</p>
-                </div>
-                <div class="dot"></div>
-              </div>
-              <div class="box">
-                <div class="user">
-                  <img src="images/account.png" alt="" />
-                  <p>Lorem ipsum dolor sit amet.</p>
-                </div>
-                <div class="dot"></div>
-              </div>
-              <div class="box">
-                <div class="user">
-                  <img src="images/account.png" alt="" />
-                  <p>Lorem ipsum dolor sit amet.</p>
-                </div>
-                <div class="dot"></div>
-              </div>
-              <div class="box">
-                <div class="user">
-                  <img src="images/account.png" alt="" />
-                  <p>Lorem ipsum dolor sit amet.</p>
-                </div>
-                <div class="dot"></div>
-              </div>
-              <div class="box">
-                <div class="user">
-                  <img src="images/account.png" alt="" />
-                  <p>Lorem ipsum dolor sit amet.</p>
-                </div>
-                <div class="dot"></div>
-              </div>
-              <div class="box">
-                <div class="user">
-                  <img src="images/account.png" alt="" />
-                  <p>Lorem ipsum dolor sit amet.</p>
-                </div>
-                <div class="dot"></div>
-              </div>
-              <div class="box">
-                <div class="user">
-                  <img src="images/account.png" alt="" />
-                  <p>Lorem ipsum dolor sit amet.</p>
-                </div>
-                <div class="dot"></div>
-              </div>
-              <div class="box">
-                <div class="user">
-                  <img src="images/account.png" alt="" />
-                  <p>Lorem ipsum dolor sit amet.</p>
-                </div>
-                <div class="dot"></div>
-              </div>
-              <div class="box">
-                <div class="user">
-                  <img src="images/account.png" alt="" />
-                  <p>Lorem ipsum dolor sit amet.</p>
-                </div>
-                <div class="dot"></div>
-              </div>
-              <div class="box">
-                <div class="user">
-                  <img src="images/account.png" alt="" />
-                  <p>Lorem ipsum dolor sit amet.</p>
-                </div>
-                <div class="dot"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="user-profile">
-          <img src="images/account.png" alt="user profile" />
+        <!-- Right Items -->
+        <div
+          class="w-3/12 flex justify-end items-center gap-x-3 text-xl text-bgBlack"
+        >
+          <a
+            href="#"
+            class="xl:block xxl:hidden px-3 py-2 bg-bgLightWhite hover:bg-gray-200 rounded-full"
+          >
+            <i class="fa-solid fa-plus"></i>
+          </a>
+          <a
+            href="#"
+            class="hidden xxl:block px-3 py-2 bg-bgLightWhite hover:bg-gray-200 rounded-full"
+          >
+            <i class="fa-solid fa-list-ul"></i>
+          </a>
+          <a
+            href="#"
+            class="px-3 py-2 bg-bgLightWhite hover:bg-gray-200 rounded-full"
+          >
+            <i class="fa-brands fa-facebook-messenger"></i>
+          </a>
+          <a
+            href="#"
+            class="px-3 py-2 bg-bgLightWhite hover:bg-gray-200 rounded-full"
+          >
+            <i class="fa-solid fa-bell"></i>
+          </a>
+          <img
+            src="images/user-profile.jpg"
+            alt=""
+            class="w-10 h-10 object-cover rounded-full cursor-pointer"
+          />
         </div>
       </div>
     </nav>
+    <section>
+      <!-- Left Items -->
+      <div class="hidden xl:block w-3/12 h-screen fixed top-0 left-0 mt-16 pl-2 pr-10 py-4 overflow-y-auto hidden_scrollbar">
+        <div class="flex flex-col ">
+          <div class="flex items-center gap-x-3 p-2 cursor-pointer rounded-lg hover:bg-gray-200 transition-all duration-200">
+            <img src="images/user-profile.jpg" alt="" class="w-10 h-10 object-cover rounded-full">
+            <h3 class="text-base">សុខ ឃាង</h3>
+          </div>
+          <div class="flex items-center gap-x-3 p-2 cursor-pointer rounded-lg hover:bg-gray-200 transition-all duration-200">
+            <img src="images/friends.png" alt="" class="w-10 h-10 object-cover rounded-full">
+            <h3 class="text-base">Friends</h3>
+          </div>
+          <div class="flex items-center gap-x-3 p-2 cursor-pointer rounded-lg hover:bg-gray-200 transition-all duration-200">
+            <img src="images/ads_manager.png" alt="" class="w-10 h-10 object-cover rounded-full">
+            <h3 class="text-base">Ads Manager</h3>
+          </div>
+          <div class="flex items-center gap-x-3 p-2 cursor-pointer rounded-lg hover:bg-gray-200 transition-all duration-200">
+            <img src="images/feeds.png" alt="" class="w-10 h-10 object-cover rounded-full">
+            <h3 class="text-base">Feeds</h3>
+          </div>
+          <div class="flex items-center gap-x-3 p-2 cursor-pointer rounded-lg hover:bg-gray-200 transition-all duration-200">
+            <img src="images/event.png" alt="" class="w-10 h-10 object-cover rounded-full">
+            <h3 class="text-base">Events</h3>
+          </div>
+          <div class="flex items-center gap-x-3 p-2 cursor-pointer rounded-lg hover:bg-gray-200 transition-all duration-200">
+            <img src="images/memories.png" alt="" class="w-10 h-10 object-cover rounded-full">
+            <h3 class="text-base">Memories</h3>
+          </div>
+          <div class="flex items-center gap-x-3 p-2 cursor-pointer rounded-lg hover:bg-gray-200 transition-all duration-200">
+            <img src="images/saved.png" alt="" class="w-10 h-10 object-cover rounded-full">
+            <h3 class="text-base">Saved</h3>
+          </div>
+          <div class="flex items-center gap-x-3 p-2 cursor-pointer rounded-lg hover:bg-gray-200 transition-all duration-200">
+            <img src="images/groups.png" alt="" class="w-10 h-10 object-cover rounded-full">
+            <h3 class="text-base">Groups</h3>
+          </div>
+          <div class="flex items-center gap-x-3 p-2 cursor-pointer rounded-lg hover:bg-gray-200 transition-all duration-200">
+            <img src="images/video.png" alt="" class="w-10 h-10 object-cover rounded-full">
+            <h3 class="text-base">Videos</h3>
+          </div>
+          <div class="flex items-center gap-x-3 p-2 cursor-pointer rounded-lg hover:bg-gray-200 transition-all duration-200">
+            <img src="images/marketplace.png" alt="" class="w-10 h-10 object-cover rounded-full">
+            <h3 class="text-base">Marketplace</h3>
+          </div>
+          <div class="flex items-center gap-x-3 p-2 cursor-pointer rounded-lg hover:bg-gray-200 transition-all duration-200">
+            <img src="images/fundraisers.png" alt="" class="w-10 h-10 object-cover rounded-full">
+            <h3 class="text-base">Fundraisers</h3>
+          </div>
+          <div class="flex items-center gap-x-3 p-2 cursor-pointer rounded-lg hover:bg-gray-200 transition-all duration-200">
+            <img src="images/climate-science-center.png" alt="" class="w-10 h-10 object-cover rounded-full">
+            <h3 class="text-base">Climate Science Center</h3>
+          </div>
+          <div class="flex items-center gap-x-3 p-2 cursor-pointer rounded-lg hover:bg-gray-200 transition-all duration-200">
+            <img src="images/gaming-video.png" alt="" class="w-10 h-10 object-cover rounded-full">
+            <h3 class="text-base">Gaming Video</h3>
+          </div>
+          <div class="flex items-center gap-x-3 p-2 cursor-pointer rounded-lg hover:bg-gray-200 transition-all duration-200">
+            <img src="images/messenger.png" alt="" class="w-10 h-10 object-cover rounded-full">
+            <h3 class="text-base">Messenger</h3>
+          </div>
+          <div class="flex items-center gap-x-3 p-2 cursor-pointer rounded-lg hover:bg-gray-200 transition-all duration-200">
+            <img src="images/messenger-kids.png" alt="" class="w-10 h-10 object-cover rounded-full">
+            <h3 class="text-base">Messenger Kids</h3>
+          </div>
+          <div class="flex items-center gap-x-3 p-2 cursor-pointer rounded-lg hover:bg-gray-200 transition-all duration-200">
+            <img src="images/orders-and-payments.png" alt="" class="w-10 h-10 object-cover rounded-full">
+            <h3 class="text-base">Orders and payments</h3>
+          </div>
+          <div class="flex items-center gap-x-3 p-2 cursor-pointer rounded-lg hover:bg-gray-200 transition-all duration-200">
+            <img src="images/pages.png" alt="" class="w-10 h-10 object-cover rounded-full">
+            <h3 class="text-base">Pages</h3>
+          </div>
+          <div class="flex items-center gap-x-3 p-2 cursor-pointer rounded-lg hover:bg-gray-200 transition-all duration-200">
+            <img src="images/play-games.png" alt="" class="w-10 h-10 object-cover rounded-full">
+            <h3 class="text-base">Play games</h3>
+          </div>
+          <div class="flex items-center gap-x-3 p-2 cursor-pointer rounded-lg hover:bg-gray-200 transition-all duration-200">
+            <img src="images/recent-ad-activity.png" alt="" class="w-10 h-10 object-cover rounded-full">
+            <h3 class="text-base">Recent ad activity</h3>
+          </div>
 
-    <!-- Main Section -->
-    <div class="main-container">
-      <!-- Side Left -->
-      <div class="side-left">
-        <div class="box-container">
-          <div class="box">
-            <img src="images/account.png" alt="" width="40" />
-            <p>Khim Seangkhin</p>
+        </div>
+      </div>
+      <!-- Center -->
+      <div class="w-8/12 bg-red-200 xl:w-6/12 h-auto mx-auto xl:mx-auto mt-16 py-4">
+        <div class="max-w-xl mx-auto">
+          <!-- Box 1 -->
+          <div class="w-full bg-bgWhite p-3 rounded-lg mb-4">
+            <div class="flex gap-x-3 border-b-2 pb-3">
+              <img
+                src="images/user-profile.jpg"
+                alt=""
+                class="w-10 h-10 object-cover rounded-full"
+              />
+              <button
+                class="w-full text-base text-gray-700 text-left px-4 rounded-full bg-bgLightWhite hover:bg-gray-200"
+              >
+                What's on your mind, សុខ?
+              </button>
+            </div>
+            <div class="grid grid-cols-3 pt-2">
+              <div
+                class="flex justify-center items-center gap-x-2 px-4 py-2 rounded-md cursor-pointer hover:bg-gray-200 transition-all duration-200"
+              >
+                <img src="images/icon-video.png" alt="" class="h-6" />
+                <p class="text-base">Live video</p>
+              </div>
+              <div
+                class="flex justify-center items-center gap-x-2 px-4 py-2 rounded-md cursor-pointer hover:bg-gray-200 transition-all duration-200"
+              >
+                <img src="images/photo.png" alt="" class="h-6" />
+                <p class="text-base">Photo/video</p>
+              </div>
+              <div
+                class="flex justify-center items-center gap-x-2 px-4 py-2 rounded-md cursor-pointer hover:bg-gray-200 transition-all duration-200"
+              >
+                <img src="images/feeling.png" alt="" class="h-6" />
+                <p class="text-base">Feeling/activity</p>
+              </div>
+            </div>
           </div>
-          <div class="box">
-            <i class="fa-solid fa-user-group"></i>
-            <p>friends</p>
+          <!-- Box 2 -->
+          <div class="w-full bg-white rounded-lg mb-4">
+            <div class="flex justify-between p-3">
+                <!-- Left Items -->
+                <div class="flex gap-x-2">
+                    <img
+                    src="images/profile_1.jpg"
+                    alt=""
+                    class="w-10 h-10 object-cover rounded-full border-2 border-blue-700"
+                    />
+                    <div>
+                    <h2 class="text-base font-semibold">Better HR</h2>
+                    <div class="flex items-center gap-x-2">
+                        <p class="text-sm italic">Sponsored</p>
+                        <svg
+                        viewBox="0 0 16 16"
+                        width="12"
+                        height="12"
+                        fill="currentColor"
+                        title="Shared with Public"
+                        class="x19dipnz x1lliihq x1k90msu x2h7rmj x1qfuztq"
+                        >
+                        <title>Shared with Public</title>
+                        <g fill-rule="evenodd" transform="translate(-448 -544)">
+                            <g>
+                            <path
+                                d="M109.5 408.5c0 3.23-2.04 5.983-4.903 7.036l.07-.036c1.167-1 1.814-2.967 2-3.834.214-1 .303-1.3-.5-1.96-.31-.253-.677-.196-1.04-.476-.246-.19-.356-.59-.606-.73-.594-.337-1.107.11-1.954.223a2.666 2.666 0 0 1-1.15-.123c-.007 0-.007 0-.013-.004l-.083-.03c-.164-.082-.077-.206.006-.36h-.006c.086-.17.086-.376-.05-.529-.19-.214-.54-.214-.804-.224-.106-.003-.21 0-.313.004l-.003-.004c-.04 0-.084.004-.124.004h-.037c-.323.007-.666-.034-.893-.314-.263-.353-.29-.733.097-1.09.28-.26.863-.8 1.807-.22.603.37 1.166.667 1.666.5.33-.11.48-.303.094-.87a1.128 1.128 0 0 1-.214-.73c.067-.776.687-.84 1.164-1.2.466-.356.68-.943.546-1.457-.106-.413-.51-.873-1.28-1.01a7.49 7.49 0 0 1 6.524 7.434"
+                                transform="translate(354 143.5)"
+                            ></path>
+                            <path
+                                d="M104.107 415.696A7.498 7.498 0 0 1 94.5 408.5a7.48 7.48 0 0 1 3.407-6.283 5.474 5.474 0 0 0-1.653 2.334c-.753 2.217-.217 4.075 2.29 4.075.833 0 1.4.561 1.333 2.375-.013.403.52 1.78 2.45 1.89.7.04 1.184 1.053 1.33 1.74.06.29.127.65.257.97a.174.174 0 0 0 .193.096"
+                                transform="translate(354 143.5)"
+                            ></path>
+                            <path
+                                fill-rule="nonzero"
+                                d="M110 408.5a8 8 0 1 1-16 0 8 8 0 0 1 16 0zm-1 0a7 7 0 1 0-14 0 7 7 0 0 0 14 0z"
+                                transform="translate(354 143.5)"
+                            ></path>
+                            </g>
+                        </g>
+                        </svg>
+                    </div>
+                    </div>
+                </div>
+                <!-- Right Items -->
+                <div class="flex items-center self-baseline gap-x-3">
+                    <svg
+                    viewBox="0 0 20 20"
+                    width="20"
+                    height="20"
+                    fill="currentColor"
+                    class="cursor-pointer"
+                    >
+                    <g fill-rule="evenodd" transform="translate(-446 -350)">
+                        <path
+                        d="M458 360a2 2 0 1 1-4 0 2 2 0 0 1 4 0m6 0a2 2 0 1 1-4 0 2 2 0 0 1 4 0m-12 0a2 2 0 1 1-4 0 2 2 0 0 1 4 0"
+                        ></path>
+                    </g>
+                    </svg>
+
+                    <a href="#" class="text-2xl text-gray-500">
+                    <i class="fa-solid fa-xmark"></i>
+                    </a>
+                </div>
+            </div>
+            <p class="px-3 text-gray-600 text-base mb-3">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, nemo minima. Cum deleniti reprehenderit amet repellat quibusdam expedita consequatur harum?
+            </p>
+            <img src="images/img_1.jpg" alt="" class="w-full h-[600px] object-cover">
+            <!-- Social Media -->
+            <div class="flex justify-between items-center text-sm px-3 py-1 mt-2">
+              <div class="flex gap-x-2">
+                <a href="#" class="text-blue-600">
+                  <i class="fa-regular fa-thumbs-up"></i>
+                </a>
+                <a href="#" class="hover:underline">2.6K</a>
+              </div>
+              <div class="flex gap-x-2">
+                <a href="#" class="hover:underline">
+                  14 Comments
+                </a>
+                <a href="#" class="hover:underline">21 Shares</a>
+              </div>
+            </div>
+            <div class="px-3 py-1">
+              <!-- Flex Container -->
+              <div class="grid grid-cols-3 py-1 border-t-2">
+                <div
+                  class="flex justify-center items-center gap-x-2 px-4 py-1 rounded-md cursor-pointer hover:bg-gray-200 transition-all duration-200"
+                >
+                  <a href="#" class="text-lg">
+                    <i class="fa-regular fa-thumbs-up"></i>
+
+                  </a>
+                  <p class="text-base">Like</p>
+                </div>
+                <div
+                  class="flex justify-center items-center gap-x-2 px-4 py-1 rounded-md cursor-pointer hover:bg-gray-200 transition-all duration-200"
+                >
+                  <a href="#" class="text-lg">
+                    <i class="fa-regular fa-comment"></i>
+                  </a>
+                  <p class="text-base">Comment</p>
+                </div>
+                <div
+                  class="flex justify-center items-center gap-x-2 px-4 py-1 rounded-md cursor-pointer hover:bg-gray-200 transition-all duration-200"
+                >
+                  <a href="#" class="text-lg">
+                    <i class="fa-solid fa-share"></i>
+                  </a>
+                  <p class="text-base">Share</p>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="box">
-            <i class="fa-solid fa-newspaper"></i>
-            <p>Feeds</p>
+          <!-- Box 3 -->
+          <div class="w-full bg-white rounded-lg mb-4">
+            <div class="flex justify-between p-3">
+                <!-- Left Items -->
+                <div class="flex gap-x-2">
+                    <img
+                    src="images/profile_2.jpg"
+                    alt=""
+                    class="w-10 h-10 object-cover rounded-full"
+                    />
+                    <div>
+                    <h2 class="text-base font-semibold">Business Cambodia</h2>
+                    <div class="flex items-center gap-x-2">
+                        <p class="text-sm italic">8m</p>
+                        <svg
+                        viewBox="0 0 16 16"
+                        width="12"
+                        height="12"
+                        fill="currentColor"
+                        title="Shared with Public"
+                        class="x19dipnz x1lliihq x1k90msu x2h7rmj x1qfuztq"
+                        >
+                        <title>Shared with Public</title>
+                        <g fill-rule="evenodd" transform="translate(-448 -544)">
+                            <g>
+                            <path
+                                d="M109.5 408.5c0 3.23-2.04 5.983-4.903 7.036l.07-.036c1.167-1 1.814-2.967 2-3.834.214-1 .303-1.3-.5-1.96-.31-.253-.677-.196-1.04-.476-.246-.19-.356-.59-.606-.73-.594-.337-1.107.11-1.954.223a2.666 2.666 0 0 1-1.15-.123c-.007 0-.007 0-.013-.004l-.083-.03c-.164-.082-.077-.206.006-.36h-.006c.086-.17.086-.376-.05-.529-.19-.214-.54-.214-.804-.224-.106-.003-.21 0-.313.004l-.003-.004c-.04 0-.084.004-.124.004h-.037c-.323.007-.666-.034-.893-.314-.263-.353-.29-.733.097-1.09.28-.26.863-.8 1.807-.22.603.37 1.166.667 1.666.5.33-.11.48-.303.094-.87a1.128 1.128 0 0 1-.214-.73c.067-.776.687-.84 1.164-1.2.466-.356.68-.943.546-1.457-.106-.413-.51-.873-1.28-1.01a7.49 7.49 0 0 1 6.524 7.434"
+                                transform="translate(354 143.5)"
+                            ></path>
+                            <path
+                                d="M104.107 415.696A7.498 7.498 0 0 1 94.5 408.5a7.48 7.48 0 0 1 3.407-6.283 5.474 5.474 0 0 0-1.653 2.334c-.753 2.217-.217 4.075 2.29 4.075.833 0 1.4.561 1.333 2.375-.013.403.52 1.78 2.45 1.89.7.04 1.184 1.053 1.33 1.74.06.29.127.65.257.97a.174.174 0 0 0 .193.096"
+                                transform="translate(354 143.5)"
+                            ></path>
+                            <path
+                                fill-rule="nonzero"
+                                d="M110 408.5a8 8 0 1 1-16 0 8 8 0 0 1 16 0zm-1 0a7 7 0 1 0-14 0 7 7 0 0 0 14 0z"
+                                transform="translate(354 143.5)"
+                            ></path>
+                            </g>
+                        </g>
+                        </svg>
+                    </div>
+                    </div>
+                </div>
+                <!-- Right Items -->
+                <div class="flex items-center self-baseline gap-x-3">
+                    <svg
+                    viewBox="0 0 20 20"
+                    width="20"
+                    height="20"
+                    fill="currentColor"
+                    class="cursor-pointer"
+                    >
+                    <g fill-rule="evenodd" transform="translate(-446 -350)">
+                        <path
+                        d="M458 360a2 2 0 1 1-4 0 2 2 0 0 1 4 0m6 0a2 2 0 1 1-4 0 2 2 0 0 1 4 0m-12 0a2 2 0 1 1-4 0 2 2 0 0 1 4 0"
+                        ></path>
+                    </g>
+                    </svg>
+
+                    <a href="#" class="text-2xl text-gray-500">
+                    <i class="fa-solid fa-xmark"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="w-full h-72 flex justify-center items-center bg-red-600">
+              <p class="text-2xl text-center text-white px-8 ">ធ្វើកា.រយូរមិនទាន់សល់អ្វីជាប់ខ្លួន ខមិន yes
+                ចាបក្រហមណែនាំសៀវភៅ១ក្បាល🥰👇</p>
+            </div>
+            <!-- Social Media -->
+            <div class="flex justify-between items-center text-sm px-3 py-1 mt-2">
+              <div class="flex gap-x-2">
+                <a href="#" class="text-blue-600">
+                  <i class="fa-regular fa-thumbs-up"></i>
+                </a>
+                <a href="#" class="hover:underline">2.6K</a>
+              </div>
+              <div>
+                <a href="#" class="hover:underline">
+                  9 Comments
+                </a>
+              </div>
+            </div>
+            <div class="px-3 py-1">
+              <!-- Flex Container -->
+              <div class="grid grid-cols-3 py-1 border-t-2">
+                <div
+                  class="flex justify-center items-center gap-x-2 px-4 py-1 rounded-md cursor-pointer hover:bg-gray-200 transition-all duration-200"
+                >
+                  <a href="#" class="text-lg">
+                    <i class="fa-regular fa-thumbs-up"></i>
+
+                  </a>
+                  <p class="text-base">Like</p>
+                </div>
+                <div
+                  class="flex justify-center items-center gap-x-2 px-4 py-1 rounded-md cursor-pointer hover:bg-gray-200 transition-all duration-200"
+                >
+                  <a href="#" class="text-lg">
+                    <i class="fa-regular fa-comment"></i>
+                  </a>
+                  <p class="text-base">Comment</p>
+                </div>
+                <div
+                  class="flex justify-center items-center gap-x-2 px-4 py-1 rounded-md cursor-pointer hover:bg-gray-200 transition-all duration-200"
+                >
+                  <a href="#" class="text-lg">
+                    <i class="fa-solid fa-share"></i>
+                  </a>
+                  <p class="text-base">Share</p>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="box">
-            <i class="fa-brands fa-youtube"></i>
-            <p>Videos</p>
-          </div>
-          <div class="box">
-            <i class="fa-solid fa-bell"></i>
-            <p>Memories</p>
-          </div>
-          <div class="box">
-            <i class="fa-solid fa-floppy-disk"></i>
-            <p>Saved</p>
-          </div>
-          <div class="box">
-            <i class="fa-solid fa-users"></i>
-            <p>Groups</p>
-          </div>
-          <div class="box">
-            <i class="fa-solid fa-shop"></i>
-            <p>Marketplace</p>
-          </div>
-          <div class="box">
-            <i class="fa-solid fa-calendar"></i>
-            <p>Events</p>
-          </div>
-          <div class="box">
-            <i class="fa-brands fa-adversal"></i>
-            <p>Ads Manager</p>
-          </div>
-          <div class="box">
-            <i class="fa-solid fa-heart"></i>
-            <p>Fundraisers</p>
+          <!-- Box 4 -->
+          <div class="w-full bg-white rounded-lg mb-4">
+            <div class="flex justify-between p-3">
+                <!-- Left Items -->
+                <div class="flex gap-x-2">
+                    <img
+                    src="images/profile_3.jpg"
+                    alt=""
+                    class="w-10 h-10 object-cover rounded-full"
+                    />
+                    <div>
+                    <a href="#" class="text-base hover:underline font-semibold">
+                      Admin KS - អែដមីន​ គីមសង់
+                    </a>
+                    <div class="flex items-center gap-x-2">
+                        <p class="text-sm italic">19h</p>
+                        <svg
+                        viewBox="0 0 16 16"
+                        width="12"
+                        height="12"
+                        fill="currentColor"
+                        title="Shared with Public"
+                        class="x19dipnz x1lliihq x1k90msu x2h7rmj x1qfuztq"
+                        >
+                        <title>Shared with Public</title>
+                        <g fill-rule="evenodd" transform="translate(-448 -544)">
+                            <g>
+                            <path
+                                d="M109.5 408.5c0 3.23-2.04 5.983-4.903 7.036l.07-.036c1.167-1 1.814-2.967 2-3.834.214-1 .303-1.3-.5-1.96-.31-.253-.677-.196-1.04-.476-.246-.19-.356-.59-.606-.73-.594-.337-1.107.11-1.954.223a2.666 2.666 0 0 1-1.15-.123c-.007 0-.007 0-.013-.004l-.083-.03c-.164-.082-.077-.206.006-.36h-.006c.086-.17.086-.376-.05-.529-.19-.214-.54-.214-.804-.224-.106-.003-.21 0-.313.004l-.003-.004c-.04 0-.084.004-.124.004h-.037c-.323.007-.666-.034-.893-.314-.263-.353-.29-.733.097-1.09.28-.26.863-.8 1.807-.22.603.37 1.166.667 1.666.5.33-.11.48-.303.094-.87a1.128 1.128 0 0 1-.214-.73c.067-.776.687-.84 1.164-1.2.466-.356.68-.943.546-1.457-.106-.413-.51-.873-1.28-1.01a7.49 7.49 0 0 1 6.524 7.434"
+                                transform="translate(354 143.5)"
+                            ></path>
+                            <path
+                                d="M104.107 415.696A7.498 7.498 0 0 1 94.5 408.5a7.48 7.48 0 0 1 3.407-6.283 5.474 5.474 0 0 0-1.653 2.334c-.753 2.217-.217 4.075 2.29 4.075.833 0 1.4.561 1.333 2.375-.013.403.52 1.78 2.45 1.89.7.04 1.184 1.053 1.33 1.74.06.29.127.65.257.97a.174.174 0 0 0 .193.096"
+                                transform="translate(354 143.5)"
+                            ></path>
+                            <path
+                                fill-rule="nonzero"
+                                d="M110 408.5a8 8 0 1 1-16 0 8 8 0 0 1 16 0zm-1 0a7 7 0 1 0-14 0 7 7 0 0 0 14 0z"
+                                transform="translate(354 143.5)"
+                            ></path>
+                            </g>
+                        </g>
+                        </svg>
+                    </div>
+                    </div>
+                </div>
+                <!-- Right Items -->
+                <div class="flex items-center self-baseline gap-x-3">
+                    <svg
+                    viewBox="0 0 20 20"
+                    width="20"
+                    height="20"
+                    fill="currentColor"
+                    class="cursor-pointer"
+                    >
+                    <g fill-rule="evenodd" transform="translate(-446 -350)">
+                        <path
+                        d="M458 360a2 2 0 1 1-4 0 2 2 0 0 1 4 0m6 0a2 2 0 1 1-4 0 2 2 0 0 1 4 0m-12 0a2 2 0 1 1-4 0 2 2 0 0 1 4 0"
+                        ></path>
+                    </g>
+                    </svg>
+
+                    <a href="#" class="text-2xl text-gray-500">
+                    <i class="fa-solid fa-xmark"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="px-3 mb-2">
+              <p class="text-base">
+                មឿន សុខហ៊ុច អរផងភ័យផងជិតដល់ថ្ងៃទទួលឡានពីលោក ឧកញ៉ា ស្រី ចាន់ថនហើយចំថ្ងៃប្រកួតតែម្តងទៀតនៅ KKIF ១៣មេសា២០២៤ 
+                តែមើលទៅរបួ..សគាត់ មិនទាន់ជាទេ😌
+              </p>
+            </div>
+            <video src="images/video_1.mp4" class="w-full h-[500px]" controls></video>
+            <!-- Social Media -->
+            <div class="flex justify-between items-center text-sm px-3 py-1 mt-2">
+              <div class="flex gap-x-2">
+                <a href="#" class="text-blue-600">
+                  <i class="fa-regular fa-thumbs-up"></i>
+                </a>
+                <a href="#" class="hover:underline">13K</a>
+              </div>
+              <div class="flex gap-x-2">
+                <a href="#" class="hover:underline">
+                  124 Comments
+                </a>
+                <a href="#" class="hover:underline">167 Shares</a>
+              </div>
+            </div>
+            <div class="px-3 py-1">
+              <!-- Flex Container -->
+              <div class="grid grid-cols-3 py-1 border-t-2">
+                <div
+                  class="flex justify-center items-center gap-x-2 px-4 py-1 rounded-md cursor-pointer hover:bg-gray-200 transition-all duration-200"
+                >
+                  <a href="#" class="text-lg">
+                    <i class="fa-regular fa-thumbs-up"></i>
+
+                  </a>
+                  <p class="text-base">Like</p>
+                </div>
+                <div
+                  class="flex justify-center items-center gap-x-2 px-4 py-1 rounded-md cursor-pointer hover:bg-gray-200 transition-all duration-200"
+                >
+                  <a href="#" class="text-lg">
+                    <i class="fa-regular fa-comment"></i>
+                  </a>
+                  <p class="text-base">Comment</p>
+                </div>
+                <div
+                  class="flex justify-center items-center gap-x-2 px-4 py-1 rounded-md cursor-pointer hover:bg-gray-200 transition-all duration-200"
+                >
+                  <a href="#" class="text-lg">
+                    <i class="fa-solid fa-share"></i>
+                  </a>
+                  <p class="text-base">Share</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-
-      <!-- Main Content -->
-      <div class="main">
-        <div class="main-wrapper">
-          <!-- Swiper -->
-          <div class="slide-container">
-            <div class="swiper mySwiper">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide slide">
-                  <img src="images/1.webp" alt="" />
-                </div>
-                <div class="swiper-slide slide">
-                  <img src="images/2.webp" alt="" />
-                </div>
-                <div class="swiper-slide slide">
-                  <img src="images/3.webp" alt="" />
-                </div>
-                <div class="swiper-slide slide">
-                  <img src="images/4.webp" alt="" />
-                </div>
-                <div class="swiper-slide slide">
-                  <img src="images/5.webp" alt="" />
-                </div>
-              </div>
-              <div class="swiper-pagination"></div>
+      <!-- Right Items -->
+      <div class="hidden lg:block w-4/12 lg:w-3/12 h-screen fixed top-0 right-0 mt-16 pl-10 pr-2 py-4 overflow-y-scroll hidden_scrollbar">
+        <div class="flex flex-col">
+          <div class="flex justify-between items-center px-2 mb-1">
+            <h2 class="text-lg font-semibold text-gray-700">Contact</h2>
+            <div class="flex items-center gap-x-4 cursor-pointer">
+              <i
+                class="fa-solid fa-magnifying-glass text-base"
+                id="icon_search"
+              ></i>
+              <svg
+                viewBox="0 0 20 20"
+                width="20"
+                height="20"
+                fill="currentColor"
+                class="cursor-pointer"
+                >
+                <g fill-rule="evenodd" transform="translate(-446 -350)">
+                    <path
+                    d="M458 360a2 2 0 1 1-4 0 2 2 0 0 1 4 0m6 0a2 2 0 1 1-4 0 2 2 0 0 1 4 0m-12 0a2 2 0 1 1-4 0 2 2 0 0 1 4 0"
+                    ></path>
+                </g>
+              </svg>
             </div>
           </div>
-          <div class="thought">
-            <div class="user">
-              <img src="images/account.png" alt="" />
-              <button>What's on your mind?</button>
+          <div class="flex items-center gap-x-2 p-2 rounded-lg cursor-pointer hover:bg-gray-200 transition-all duration-200">
+            <div class="relative">
+              <img src="images/contacts/user_1.jpg" alt="" class="object-cover w-9 h-9 rounded-full">
+              <div class="absolute bottom-0 right-0 w-[10px] h-[10px] bg-green-500 rounded-full border-2 border-gray-300"></div>
             </div>
-            <div class="footer-container">
-              <div class="box">
-                <i class="fa-solid fa-video"></i>
-                Live video
-              </div>
-              <div class="box">
-                <i class="fa-solid fa-image"></i>
-                photo/video
-              </div>
-              <div class="box">
-                <i class="fa-solid fa-face-smile"></i>
-                Feeling/Activity
-              </div>
-            </div>
+            <h3 class="text-base text-gray-700">Sry Nai</h3>
           </div>
-          <div class="user-wrapper">
-            <div class="user-heading">
-              <img src="images/account.png" alt="" />
-              <p>Lorem ipsum dolor sit amet.</p>
+          <div class="flex items-center gap-x-2 p-2 rounded-lg cursor-pointer hover:bg-gray-200 transition-all duration-200">
+            <div class="relative">
+              <img src="images/contacts/user_2.jpg" alt="" class="object-cover w-9 h-9 rounded-full">
+              <div class="absolute bottom-0 right-0 w-[10px] h-[10px] bg-green-500 rounded-full border-2 border-gray-300"></div>
             </div>
-            <div class="user-text">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Voluptatum, soluta! Repellat odio fuga deleniti ex quas omnis.
-              Nobis, quasi temporibus?
-            </div>
-            <img src="images/1.webp" alt="" />
-            <div class="footer-container">
-              <div class="box">
-                <i class="fa-solid fa-thumbs-up"></i>
-                Like
-              </div>
-              <div class="box">
-                <i class="fa-solid fa-comment"></i>
-                Comment
-              </div>
-              <div class="box">
-                <i class="fa-solid fa-share"></i>
-                Share
-              </div>
-            </div>
+            <h3 class="text-base text-gray-700">ណៃ ណៃ</h3>
           </div>
+          <div class="flex items-center gap-x-2 p-2 rounded-lg cursor-pointer hover:bg-gray-200 transition-all duration-200">
+            <div class="relative">
+              <img src="images/contacts/user_3.jpg" alt="" class="object-cover w-9 h-9 rounded-full">
+              <div class="absolute bottom-0 right-0 w-[10px] h-[10px] bg-green-500 rounded-full border-2 border-gray-300"></div>
+            </div>
+            <h3 class="text-base text-gray-700">Chhim Vuthy</h3>
+          </div>
+          <div class="flex items-center gap-x-2 p-2 rounded-lg cursor-pointer hover:bg-gray-200 transition-all duration-200">
+            <div class="relative">
+              <img src="images/contacts/user_4.jpg" alt="" class="object-cover w-9 h-9 rounded-full">
+              <div class="absolute bottom-0 right-0 w-[10px] h-[10px] bg-green-500 rounded-full border-2 border-gray-300"></div>
+            </div>
+            <h3 class="text-base text-gray-700">Chavv Chhayz</h3>
+          </div>
+          <div class="flex items-center gap-x-2 p-2 rounded-lg cursor-pointer hover:bg-gray-200 transition-all duration-200">
+            <div class="relative">
+              <img src="images/contacts/user_5.jpg" alt="" class="object-cover w-9 h-9 rounded-full">
+              <div class="absolute bottom-0 right-0 w-[10px] h-[10px] bg-green-500 rounded-full border-2 border-gray-300"></div>
+            </div>
+            <h3 class="text-base text-gray-700">Heng Koustob</h3>
+          </div>
+          <div class="flex items-center gap-x-2 p-2 rounded-lg cursor-pointer hover:bg-gray-200 transition-all duration-200">
+            <div class="relative">
+              <img src="images/contacts/user_6.jpg" alt="" class="object-cover w-9 h-9 rounded-full">
+              <div class="absolute bottom-0 right-0 w-[10px] h-[10px] bg-green-500 rounded-full border-2 border-gray-300"></div>
+            </div>
+            <h3 class="text-base text-gray-700">សាំង ប៉ែះ</h3>
+          </div>
+          <div class="flex items-center gap-x-2 p-2 rounded-lg cursor-pointer hover:bg-gray-200 transition-all duration-200">
+            <div class="relative">
+              <img src="images/contacts/user_7.jpg" alt="" class="object-cover w-9 h-9 rounded-full">
+              <div class="absolute bottom-0 right-0 w-[10px] h-[10px] bg-green-500 rounded-full border-2 border-gray-300"></div>
+            </div>
+            <h3 class="text-base text-gray-700">Vireak Both</h3>
+          </div>
+          <div class="flex items-center gap-x-2 p-2 rounded-lg cursor-pointer hover:bg-gray-200 transition-all duration-200">
+            <div class="relative">
+              <img src="images/contacts/user_8.jpg" alt="" class="object-cover w-9 h-9 rounded-full">
+              <div class="absolute bottom-0 right-0 w-[10px] h-[10px] bg-green-500 rounded-full border-2 border-gray-300"></div>
+            </div>
+            <h3 class="text-base text-gray-700">Nang Sokna</h3>
+          </div>
+          
         </div>
       </div>
-
-      <!-- Side Right -->
-      <div class="side-right">
-        <div class="side-right-title">
-          <h2>Contacts</h2>
-          <div class="icon-container">
-            <i class="fa-solid fa-magnifying-glass"></i>
-            <div class="dot">
-              <div></div>
-              <div></div>
-              <div></div>
-            </div>
-          </div>
-        </div>
-        <div class="box-container">
-          <div class="box">
-            <div class="user-container">
-              <img src="images/account.png" alt="" />
-              <span></span>
-            </div>
-            <p>Lorem ipsum dolor sit amet.</p>
-          </div>
-          <div class="box">
-            <div class="user-container">
-              <img src="images/account.png" alt="" />
-              <span></span>
-            </div>
-            <p>Lorem ipsum dolor sit amet.</p>
-          </div>
-          <div class="box">
-            <div class="user-container">
-              <img src="images/account.png" alt="" />
-              <span></span>
-            </div>
-            <p>Lorem ipsum dolor sit amet.</p>
-          </div>
-          <div class="box">
-            <div class="user-container">
-              <img src="images/account.png" alt="" />
-              <span></span>
-            </div>
-            <p>Lorem ipsum dolor sit amet.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Swiper JS -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
-    <!-- Initialize Swiper -->
-    <script>
-      var swiper = new Swiper(".mySwiper", {
-        slidesPerView: 4,
-        spaceBetween: 10,
-        loop: true,
-        // centeredSlides: true,
-        pagination: {
-          el: ".swiper-pagination",
-          clickable: true,
-        },
-      });
-    </script>
-
-    <!-- scripts js -->
-    <script>
-      const btnNotification = document.getElementById("notification");
-      const notification = document.querySelector(".notification");
-      const btnMessenger = document.getElementById("messenger");
-      const messenger = document.querySelector(".messenger");
-
-      btnNotification.addEventListener("click", (e) => {
-        e.target.classList.toggle("active");
-        notification.classList.toggle("show");
-      });
-
-      btnMessenger.addEventListener("click", (e) => {
-        e.target.classList.toggle("active");
-        messenger.classList.toggle("show");
-      });
-
-      document.getElementById("input_search").onfocus = function () {
-        document.querySelector(".search-dropdown").classList.add("show");
-        document.querySelector(".navbar-brand").style.display = "none";
-        document.getElementById("btn_close").style.display = "block";
-        document.getElementById("icon_search").style.display = "none";
-      };
-
-      document
-        .getElementById("btn_close")
-        .addEventListener("click", function () {
-          remove_item();
-        });
-      window.addEventListener("click", function (evt) {
-        if (!evt.target.matches("#input_search")) remove_item();
-      });
-
-      function remove_item() {
-        document.querySelector(".search-dropdown").classList.remove("show");
-        document.querySelector(".navbar-brand").style.display = "block";
-        document.getElementById("btn_close").style.display = "none";
-        document.getElementById("icon_search").style.display = "block";
-      }
-    </script>
+    </section>
   </body>
 </html>
